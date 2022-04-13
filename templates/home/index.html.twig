@@ -10,10 +10,16 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div class="example-wrapper">La variable est : {{ variable | upper }} {{ app.user }}
+<div class="example-wrapper">
+<img src="{{ asset('img/symfony.png') }}" >
+
+La variable est : {{ variable | upper }} {{ app.user }}
 
  {{ app.user.email ?? 'Anonymous user' }}
-   
-{{ form(monformulaire)  }}
+   {{ form(monformulaire) }}
+
+
+
+ 
 
 {% endblock %}

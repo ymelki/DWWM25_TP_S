@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Warticle index{% endblock %}
+
+{% block body %}
+    <h1>Warticle index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for warticle in warticles %}
+            <tr>
+                <td>{{ warticle.id }}</td>
+                <td>{{ warticle.nom }}</td>
+                <td>{{ warticle.description }}</td>
+                <td>{{ warticle.prix }}</td>
+                <td>
+                    <a href="{{ path('app_warticle_show', {'id': warticle.id}) }}">show</a>
+                    <a href="{{ path('app_warticle_edit', {'id': warticle.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_warticle_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dproduit index{% endblock %}
+
+{% block body %}
+    <h1>Dproduit index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>actions</th>
+                <th>categorie</th>
+                <th>image</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for dproduit in dproduits %}
+            <tr>
+                <td>{{ dproduit.id }}</td>
+                <td>{{ dproduit.nom }}</td>
+                <td>{{ dproduit.description }}</td>
+                <td>{{ dproduit.prix }}</td>
+                <td>
+                    <a href="{{ path('app_admin_dproduit_show', {'id': dproduit.id}) }}">show</a>
+                    <a href="{{ path('app_admin_dproduit_edit', {'id': dproduit.id}) }}">edit</a>
+                </td>
+                <td> {{ dproduit.Dcategories }}</td>
+                <td> <img src="{{asset('upload/' ~  dproduit.imagefilename ) }}"  width=20%> </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_admin_dproduit_new') }}">Create new</a>
+{% endblock %}

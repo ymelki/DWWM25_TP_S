@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Dproduit{% endblock %}
+
+{% block body %}
+    <h1>Create new Dproduit</h1>
+
+    {{ include('dproduit_catalog/_form.html.twig') }}
+
+    <a href="{{ path('app_dproduit_catalog_index') }}">back to list</a>
+{% endblock %}

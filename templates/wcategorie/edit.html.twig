@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Wcategorie{% endblock %}
+
+{% block body %}
+    <h1>Edit Wcategorie</h1>
+
+    {{ include('wcategorie/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_wcategorie_index') }}">back to list</a>
+
+    {{ include('wcategorie/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Wcategorie{% endblock %}
+
+{% block body %}
+    <h1>Create new Wcategorie</h1>
+
+    {{ include('wcategorie/_form.html.twig') }}
+
+    <a href="{{ path('app_wcategorie_index') }}">back to list</a>
+{% endblock %}

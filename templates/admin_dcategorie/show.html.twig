@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dcategorie{% endblock %}
+
+{% block body %}
+    <h1>Dcategorie</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ dcategorie.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ dcategorie.nom }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_admin_dcategorie_index') }}">back to list</a>
+
+    <a href="{{ path('app_admin_dcategorie_edit', {'id': dcategorie.id}) }}">edit</a>
+
+    {{ include('admin_dcategorie/_delete_form.html.twig') }}
+{% endblock %}
